@@ -1,7 +1,7 @@
 
 from rest_framework import generics
 from rest_framework import permissions,authentication
-
+from rest_framework import filters
 
 
 
@@ -10,6 +10,8 @@ from .serializers import Productserializer
 from .permissions import IsStaffPermissions  #ISstaffpermissions class that make the superuser the only one who can create update delete
 
 
+
+#1
 #  create  product 
 class ProductCreateAPIView(generics.CreateAPIView):
     
@@ -33,6 +35,8 @@ class ProductCreateAPIView(generics.CreateAPIView):
 product_create_view=ProductCreateAPIView.as_view()
 
 
+
+#2
 #detail of the product
 class ProductDetailAPIView(generics.RetrieveAPIView):
     
@@ -48,6 +52,8 @@ product_detail_view=ProductDetailAPIView.as_view()   #for detail view
 
 
 
+
+#3
 #list and create product
 class ProductListCreateAPIView(generics.ListCreateAPIView):
     
@@ -62,6 +68,8 @@ product_list_create_view=ProductListCreateAPIView.as_view()
 
 
 
+
+#4
 #update product 
 class ProductUpdateAPIView(generics.UpdateAPIView):
 
@@ -80,6 +88,8 @@ class ProductUpdateAPIView(generics.UpdateAPIView):
 product_update_view= ProductUpdateAPIView.as_view()
 
 
+
+#5
 #delete product 
 class ProductDestroyAPIView(generics.DestroyAPIView):
     
@@ -98,6 +108,8 @@ product_delete_view= ProductDestroyAPIView.as_view()
 
 
 
+
+#6
 #list product view
 class ProductListAPIView(generics.ListAPIView):
     queryset=Product.objects.all()
@@ -107,3 +119,15 @@ class ProductListAPIView(generics.ListAPIView):
 
 
 product_list_view=ProductListAPIView.as_view()
+
+
+
+
+class productListView(generics.ListAPIView):
+    queryset=Product.objects.all()
+    serializer_class=Productserializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['title','content','price']
+
+
+product_search=productListView.as_view()
