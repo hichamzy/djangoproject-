@@ -7,6 +7,7 @@ from rest_framework import permissions,authentication
 
 from .models import Product
 from .serializers import Productserializer
+from .permissions import IsStaffPermissions  #ISstaffpermissions class that make the superuser the only one who can create update delete
 
 
 #  create  product 
@@ -15,7 +16,7 @@ class ProductCreateAPIView(generics.CreateAPIView):
     
     queryset=Product.objects.all()
     serializer_class=Productserializer
-    permission_classes=[permissions.IsAuthenticated] #you can not create a product without being autenticated 
+    permission_classes=[permissions.IsAdminUser ,IsStaffPermissions] #you can not create a product without being admin and name hicham 
     authentication_classes = [authentication.SessionAuthentication]
 
 
@@ -38,7 +39,7 @@ class ProductDetailAPIView(generics.RetrieveAPIView):
     
     queryset=Product.objects.all()
     serializer_class=Productserializer
-    permission_classes=[permissions.IsAuthenticated]
+    permission_classes=[permissions.IsAdminUser ,IsStaffPermissions]
     authentication_classes = [authentication.SessionAuthentication]
     #lookup_field='pk'
 
@@ -53,7 +54,7 @@ class ProductListCreateAPIView(generics.ListCreateAPIView):
     
     queryset=Product.objects.all()
     serializer_class=Productserializer
-    permission_classes=[permissions.IsAuthenticated]
+    permission_classes=[permissions.IsAdminUser ,IsStaffPermissions]
     authentication_classes = [authentication.SessionAuthentication]
     
 
@@ -66,7 +67,7 @@ class ProductUpdateAPIView(generics.UpdateAPIView):
 
     queryset=Product.objects.all()
     serializer_class=Productserializer
-    permission_classes=[permissions.IsAuthenticated]
+    permission_classes=[permissions.IsAdminUser ,IsStaffPermissions]
     authentication_classes = [authentication.SessionAuthentication]
     
     def update_data(self,serializer):
@@ -85,7 +86,7 @@ class ProductDestroyAPIView(generics.DestroyAPIView):
     queryset=Product.objects.all()
     serializer_class=Productserializer
     lookup_field='pk'
-    permission_classes=[permissions.IsAuthenticated]
+    permission_classes=[permissions.IsAdminUser ,IsStaffPermissions]
     
     
     def destoy_data(self,instance):
@@ -102,7 +103,7 @@ class ProductListAPIView(generics.ListAPIView):
     queryset=Product.objects.all()
     serializer_class=Productserializer
     authentication_classes = [authentication.SessionAuthentication] 
-    permission_classes=[permissions.IsAuthenticated]
+    permission_classes=[permissions.IsAuthenticated] 
 
 
 product_list_view=ProductListAPIView.as_view()

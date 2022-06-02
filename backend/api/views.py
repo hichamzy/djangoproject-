@@ -7,6 +7,7 @@ from django.forms.models import model_to_dict  #convert the model to a dict
 from product.serializers import Productserializer
 
 
+
 @api_view(["GET"])
 def api_home(request,*args,**kwargs):
     data={}
