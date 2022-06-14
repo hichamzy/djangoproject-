@@ -1,0 +1,152 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
+
+
+
+ul.navbar-nav {display: flex;justify-content: center;width: 100%;}
+
+ul.navbar-nav li a {font-size: 17px;font-weight: 500;text-transform: uppercase;position: relative;}
+
+ul.navbar-nav li a:after {content: "";position: absolute;width: 80%;height: 2.3px;bottom: -10px;left: 14%;background: #0000004f;opacity: 0;transition: all .4s ease;}
+
+ul.navbar-nav li a.active:after,ul.navbar-nav li a:hover:after {opacity: 1;bottom: 0;}
+
+ul.navbar-nav li {padding: 10px 13px;}
+p.slogan {font-size: 40px;font-weight: 500;letter-spacing: 7px;}
+
+p.sous-titre {font-weight: 600;font-size: 19px;letter-spacing: 2px;margin-bottom: 50px;}
+
+a.btn.btn-secondary.slogan-btn {border-radius: 0;background: black;padding: 10px 50px;letter-spacing: 2px;}
+span.logo {width: 35px;height: 35px;border-radius: 60%;background: #b0b0b0;display: inline-block;position: relative;z-index: 5;}
+
+span.logo:after {content: "";position: absolute;top: -8px;left: 7px;width: 100%;height: 100%;border: 5px solid #000000a8;border-radius: 50%;}
+.header-icons {width: 148px;display: flex;justify-content: space-between;}
+
+.header-icons i {color: #2a2a2a;font-size: 18px;}
+nav.navbar {box-shadow: 0 0 9px gainsboro;}
+
+
+img.rounded.mx-auto.d-block {
+    height: 327px;
+}
+
+
+.one{
+    height: 204px;
+    width: 1370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.two{
+    height: 75px;
+    width: 1370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.tree{
+    height: 200px;
+    width: 1370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+}
+
+img.imm2 {
+    width: 299.43px;
+    height: 173.35px;
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.immg1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+.text1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+img.imm3 {
+    width: 299.43px;
+    height: 173.35px;
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.immg2{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+.text2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+img.imm4 {
+    width: 299.43px;
+    height: 173.35px;
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.immg3{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+.text3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+img.imm5 {
+    width: 299.43px;
+    height: 173.35px;
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.immg4{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+.text4 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+
